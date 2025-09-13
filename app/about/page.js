@@ -20,39 +20,44 @@ const AboutPage = () => {
   const {open, setOpen} = useProjectsContext()
 
 useEffect(() => {
-  let ctx = gsap.context(() => {
-    const sections = [
-      heroRef.current,
-      consultRef.current,
-      workRef.current,
-      secondConsultRef.current,
-      servicesRef.current,
-      otherServicesRef.current,
-    ];
+    // import ScrollTrigger only on client
+    import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+      gsap.registerPlugin(ScrollTrigger);
 
-    sections.forEach((section) => {
-      if (!section) return;
+      let ctx = gsap.context(() => {
+        const sections = [
+          heroRef.current,
+          consultRef.current,
+          workRef.current,
+          secondConsultRef.current,
+          servicesRef.current,
+          otherServicesRef.current,
+        ];
 
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%", // jab section viewport me aayega
-          toggleActions: "play none none reverse",
-        },
+        sections.forEach((section) => {
+          if (!section) return;
+
+          let tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: section,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          });
+
+          tl.from(section.querySelectorAll("h1, p, img, button"), {
+            opacity: 0,
+            y: 50,
+            duration: 0.6,
+            stagger: 0.2,
+            ease: "power3.out",
+          });
+        });
       });
 
-      tl.from(section.querySelectorAll("h1, p, img, button"), {
-        opacity: 0,
-        y: 50,
-        duration: 0.6,
-        stagger: 0.2,
-        ease: "power3.out",
-      });
+      return () => ctx.revert();
     });
-  });
-
-  return () => ctx.revert();
-}, []);
+  }, []);
   return (
     <div className='main-container'>
       <Navbar/>
