@@ -15,7 +15,8 @@ export default function Navbar() {
     { name: "About Us", href: "/about" },
   ];
 
-  useEffect(() => {
+ useEffect(() => {
+  if (typeof window !== "undefined") {
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
@@ -26,7 +27,9 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }
+}, []);
+
 
   return (
     <div

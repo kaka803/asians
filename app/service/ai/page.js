@@ -14,11 +14,11 @@ const Page = () => {
     
      const {open, setOpen} = useProjectsContext()
     
-    gsap.registerPlugin(ScrollTrigger);
-
-
-
-    useEffect(() => {
+     
+     
+     
+     useEffect(() => {
+      gsap.registerPlugin(ScrollTrigger);
     let ctx = gsap.context(() => {
       let tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
@@ -57,6 +57,7 @@ const Page = () => {
     return () => ctx.revert(); // cleanup GSAP
   }, []);
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     let ctx = gsap.context(() => {
     let tl = gsap.timeline({
       scrollTrigger: {

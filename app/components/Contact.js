@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { HashLoader } from "react-spinners";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -19,6 +19,7 @@ export default function ContactPage() {
 const [sendloading, setsendloading] = useState(false)
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     let ctx = gsap.context(() => {
       let tl = gsap.timeline({
         scrollTrigger: {
