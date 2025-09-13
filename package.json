@@ -9,15 +9,29 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@setkernel/dotted-map-next": "^1.1.1",
+    "cloudinary": "^2.7.0",
+    "dotted-map": "^2.2.3",
+    "gsap": "^3.13.0",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.542.0",
+    "mongoose": "^8.18.1",
+    "next": "15.5.2",
+    "nodemailer": "^7.0.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.2"
+    "react-icons": "^5.5.0",
+    "react-leaflet": "^5.0.0",
+    "react-spinners": "^0.17.0",
+    "styled-components": "^6.1.19",
+    "swiper": "^11.2.10"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4"
   }
 }
