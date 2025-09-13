@@ -21,7 +21,7 @@ const AboutPage = () => {
 
 useEffect(() => {
     // import ScrollTrigger only on client
-    import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+    
       gsap.registerPlugin(ScrollTrigger);
 
       let ctx = gsap.context(() => {
@@ -56,7 +56,7 @@ useEffect(() => {
       });
 
       return () => ctx.revert();
-    });
+    
   }, []);
   return (
     <div className='main-container'>
