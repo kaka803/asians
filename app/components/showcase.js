@@ -25,7 +25,7 @@ const Showcase = () => {
   return (
     <div className='showcase'>
       <div className="text-center max-md:mb-10">
-        <h2 className="text-6xl md:text-7xl mt-2  text-white uppercase lg:mt-20">
+        <h2 className="text-5xl md:text-7xl mt-7  text-white uppercase lg:mt-20">
           Our <br /> Showcasess
         </h2>
         
