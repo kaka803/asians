@@ -70,7 +70,7 @@ setsendloading(false)
 
   return (
     <div>
-  <div className="fixed bottom-5 right-5  overflow-scroll  h-1/2  w-full max-md:w-[80%] z-1000 max-w-md md:w-96 bg-[#2020209a] backdrop-blur-md rounded-2xl p-5 shadow-lg border border-white/30">
+  <div className="fixed bottom-5 right-5  max-md:overflow-scroll  h-1/2  w-full max-md:w-[80%] z-1000 max-w-md md:w-96 bg-[#2020209a] backdrop-blur-md rounded-2xl p-5 shadow-lg border border-white/30">
     
     {/* Header with X button */}
     <div className="flex justify-between items-center mb-4">
