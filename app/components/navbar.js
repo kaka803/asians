@@ -49,7 +49,7 @@ export default function Navbar() {
       <div className="main-container  flex justify-between items-center gap-5 py-2 px-6">
         {/* Logo */}
         <div className="logo">
-          <Image src="/logo.svg" width={65} height={65} alt="logo" />
+          <Image src="/logo.svg" width={65} height={65} alt="logo" className="max-md:w-15" />
         </div>
 
         {/* Navlinks - Desktop */}

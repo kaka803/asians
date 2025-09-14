@@ -163,7 +163,7 @@ useEffect(() => {
             width={255}
             height={255}
             alt="robot1"
-            className="moving-img   moving-img2 max-[1200px]:hidden max-[440px]:block absolute top-23 z-1000 left-4  max-md:-top-18 max-md:-left-5 max-md:w-[150px]"
+            className="moving-img   moving-img2 max-[1200px]:hidden max-[440px]:block absolute top-23 z-700 left-4  max-md:-top-18 max-md:-left-5 max-md:w-[150px]"
           />
         </div>
 

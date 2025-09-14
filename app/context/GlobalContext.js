@@ -8,7 +8,7 @@ const ProjectsContext = createContext();
 // Provider
 export const ProjectsProvider = ({ children }) => {
   const [projects, setProjects] = useState([]);
-  const [projectloading, setprojectloading] = useState(false)
+  const [projectloading, setprojectloading] = useState(true)
   const [open, setOpen] = useState(false);
     const [developers, setDevelopers] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -16,7 +16,6 @@ export const ProjectsProvider = ({ children }) => {
   // API call kar ke projects fetch karna
   const getProjects = async () => {
     try {
-        setprojectloading(true)
       const res = await fetch("/api/getprojects"); 
       const data = await res.json();
 console.log(data);
