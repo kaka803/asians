@@ -172,7 +172,7 @@ useEffect(() => {
       ) : (<div>
       <Navbar />
 
-      <div className="main-container min-h-[100vh] w-full flex flex-col lg:flex-row pt-30">
+      <div className="main-container min-h-[500px]  w-full flex flex-col lg:flex-row pt-30">
         
   {/* Sidebar */}
   <div className="sidebar w-full lg:min-w-[300px] lg:min-h-[500px] lg:w-auto">

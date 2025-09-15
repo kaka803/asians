@@ -8,6 +8,7 @@ import Footer from '../components/footer'
 import { useProjectsContext } from '../context/GlobalContext'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import DeveloperSwiper from '../components/developers'
 
 const AboutPage = () => {
     const titleref = useRef(null)
@@ -420,22 +421,7 @@ useEffect(() => {
 </section>
 
 
-<div ref={otherServicesRef} className="flex  main-container flex-col md:flex-row justify-start items-center gap-6 white-border p-6  rounded-lg">
-          <img
-            src="/mughal.png"
-            alt=""
-            className="w-32 sm:w-40 md:w-48 object-contain"
-          />
-          <div className="flex flex-col text-center md:text-left">
-            <h1 className="text-white text-xl sm:text-2xl lg:text-3xl">
-              Umer Mughal
-            </h1>
-            <p className="text-gray-400 font-sans">Maser of Rauf Mughal</p>
-            <p className="mt-4 text-white font-sans text-sm sm:text-base md:text-md">
-              Umer Mughal is a confident and energetic individual from the well-known Mughal family. He is a proud cousin of Rauf Mughal, and together they represent their strong family bond and legacy.
-            </p>
-          </div>
-        </div>
+<DeveloperSwiper/>
 
           </div>
           <ContactPage/>
