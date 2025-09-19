@@ -40,7 +40,7 @@ const {developers} = useProjectsContext()
       >
         {developers.map((dev) => (
           <SwiperSlide key={dev.id}>
-            <div className="flex flex-col cursor-pointer items-center justify-between bg-white/10 backdrop-blur-lg white-border p-6 rounded-lg shadow-lg hover:bg-white/20 transition-all duration-300 h-[400px]">
+            <div className="flex flex-col cursor-pointer items-center justify-between bg-white/10 backdrop-blur-lg white-border p-6 rounded-lg shadow-lg hover:bg-white/20 transition-all duration-300 h-[350px]">
               {/* Profile Image */}
               <img
                 src={dev.image}
@@ -50,10 +50,10 @@ const {developers} = useProjectsContext()
 
               {/* Name & Profession */}
               <div className="text-center">
-                <h2 className="mt-4 text-white text-lg sm:text-xl ">
+                <h2 className="mt-4 text-white text-xl sm:text-xl ">
                   {dev.name}
                 </h2>
-                <p className="text-gray-400 text-sm font-sans">{dev.profession}</p>
+                <p className="text-white text-sm font-sans">{dev.profession}</p>
               </div>
 
               {/* Description */}
@@ -62,15 +62,7 @@ const {developers} = useProjectsContext()
               </p>
 
               {/* Contact Button */}
-              <a
-  href={`https://wa.me/${dev.whatsapp}`}
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <button className="mt-4 px-4 py-2 bg-white/20 text-white text-sm rounded-xl border border-white/50 hover:bg-white hover:text-black transition-all duration-300">
-    Contact
-  </button>
-</a>
+            
             </div>
           </SwiperSlide>
         ))}

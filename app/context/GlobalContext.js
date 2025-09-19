@@ -33,7 +33,6 @@ console.log(data);
 
   useEffect(() => {
       const fetchDevelopers = async () => {
-        setLoading(true);
         try {
           const res = await fetch("/api/developers");
           const data = await res.json();
@@ -41,7 +40,6 @@ console.log(data);
         } catch (err) {
           console.error("Fetch error:", err);
         } finally {
-          setLoading(false);
         }
       };
       fetchDevelopers();

@@ -151,7 +151,7 @@ export default function Hero() {
         width={255}
         height={255}
         alt="robot1"
-        className="absolute max-md:-top-2 max-md:-right-0 -bottom-5 right-0 w-[100px] lg:w-[205px] animating-img"
+        className="absolute max-md:-top-2 max-md:-right-0 -bottom-5 right-0 w-[150px] lg:w-[205px] animating-img"
       />
 
       {/* Main Content */}
@@ -484,7 +484,7 @@ export default function Hero() {
         width={255}
         height={255}
         alt="robot1"
-        className="absolute max-md:-top-2 max-md:-right-0 -bottom-3 -right-0 w-[100px] lg:w-[205px] animating-img"
+        className="absolute max-md:-top-10 max-md:-right-0 -bottom-3 -right-0 w-[130px] lg:w-[205px] animating-img"
       />
 
       {/* Main Content */}
