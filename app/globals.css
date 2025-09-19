@@ -8,12 +8,12 @@ body {
   font-weight: 400;
   font-style: normal;
   height: 100%;
-  background: radial-gradient(circle at 0% 20%, rgba(0, 174, 255, 0.6), transparent 50%),
-              radial-gradient(circle at 100% 20%, rgba(0, 120, 200, 0.5), transparent 55%),
-              radial-gradient(circle at 0% 50%, rgba(0, 174, 255, 0.7), transparent 50%),
-              radial-gradient(circle at 100% 50%, rgba(0, 140, 220, 0.5), transparent 55%),
-              radial-gradient(circle at 0% 80%, rgba(0, 174, 255, 0.6), transparent 50%),
-              radial-gradient(circle at 100% 80%, rgba(0, 120, 200, 0.5), transparent 55%),
+  background: radial-gradient(circle at 0% 20%, rgb(23, 123, 161), transparent 50%),
+              radial-gradient(circle at 100% 20%, rgb(23, 123, 161), transparent 55%),
+              radial-gradient(circle at 0% 50%, rgb(23, 123, 161), transparent 50%),
+              radial-gradient(circle at 100% 50%, rgb(23, 123, 161), transparent 55%),
+              radial-gradient(circle at 0% 80%, rgb(23, 123, 161), transparent 50%),
+              radial-gradient(circle at 100% 80%, rgb(23, 123, 161), transparent 55%),
               #000; /* Deep black background */
   background-size: cover;
   width: 100%;
