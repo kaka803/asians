@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono, Jersey_25 } from "next/font/google";
 import { ProjectsProvider } from "./context/GlobalContext";
+import SmoothScroll from "./components/SmoothScroll";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +30,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${Jersey25.variable} antialiased`}
       >
-         <ProjectsProvider>{children}</ProjectsProvider>
+         <ProjectsProvider><SmoothScroll/>{children}<Toaster 
+          position="top-right"
+          toastOptions={{
+            style: {
+             marginTop: '70px'
+            },
+          }}
+        /></ProjectsProvider>
       </body>
     </html>
   );

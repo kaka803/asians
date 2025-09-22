@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { HashLoader } from "react-spinners";
+import toast from "react-hot-toast";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
@@ -89,7 +90,7 @@ const [sendloading, setsendloading] = useState(false)
       
 
       if (!response.ok) {
-        alert(data.error || "Something went wrong");
+        toast.error('something went wrong')
         setFormData({
   name: '',
   phone: '',
@@ -100,7 +101,7 @@ const [sendloading, setsendloading] = useState(false)
         return;
       }
 
-      alert(data.message);
+      toast.success('Message sent successfully!')
       setFormData({
         name: "",
         phone: "",
@@ -110,7 +111,7 @@ const [sendloading, setsendloading] = useState(false)
       });
     } catch (error) {
       console.error(error);
-      alert("Server error. Try again later.");
+      toast.success('Message sent successfully')
     }
   };
 

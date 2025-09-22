@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useProjectsContext } from '../context/GlobalContext';
 import { HashLoader } from 'react-spinners';
+import toast from 'react-hot-toast';
 
 const Minifoam = () => {
   const { open, setOpen } = useProjectsContext();
@@ -43,12 +44,12 @@ setsendloading(true)
     const data = await response.json();
 setsendloading(false)
     if (!response.ok) {
-      alert(data.error || "Something went wrong");
+      toast.error('something went wrong')
       return;
     }
 
     // Success
-    alert(data.message); // ya toast message
+    toast.success('Message sent successfully!')
     setFormData({
       name: '',
       phone: '',
@@ -63,14 +64,14 @@ setsendloading(false)
 
   } catch (error) {
     console.error(error);
-    alert("Server error. Try again later.");
+    toast.error('something went wrong');
   }
 };
 
 
   return (
     <div>
-  <div className="fixed bottom-5 right-5  max-md:overflow-scroll  h-1/2  w-full max-md:w-[80%] z-1000 max-w-md md:w-96 bg-[#2020209a] backdrop-blur-md rounded-2xl p-5 shadow-lg border border-white/30">
+  <div className="fixed bottom-5 right-5  max-md:overflow-scroll  max-md:h-1/2  w-full max-md:w-[80%] z-1000 max-w-md md:w-96 bg-[#2020209a] backdrop-blur-md rounded-2xl p-5 shadow-lg border border-white/30">
     
     {/* Header with X button */}
     <div className="flex justify-between items-center mb-4">

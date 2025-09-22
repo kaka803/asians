@@ -11,6 +11,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@setkernel/dotted-map-next": "^1.1.1",
+    "@studio-freight/lenis": "^1.0.42",
     "cloudinary": "^2.7.0",
     "dotted-map": "^2.2.3",
     "gsap": "^3.13.0",
@@ -21,6 +22,7 @@
     "nodemailer": "^7.0.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-hot-toast": "^2.6.0",
     "react-icons": "^5.5.0",
     "react-leaflet": "^5.0.0",
     "react-spinners": "^0.17.0",
