@@ -203,80 +203,80 @@ useEffect(() => {
                 <h1 className='text-2xl w-[90%] md:text-5xl text-white md:w-[70%] text-center'>Proudly present across global destinations</h1>
                 <p className='text-white font-sans text-lg text-center'>With a strong global presence across India, USA, UK, Canada, Norway, and Australia,<br /> we craft cutting-edge user experiences that drive maximum ROI <br />and create impact worldwide</p>
                 <div>
-                     <div className="flex justify-center items-center  flex-wrap mt-5 p-4 gap-5">
-      <div className="max-w-md min-h-22 text-white p-6 rounded-xl shadow-lg white-border">
-        {/* Icon + Heading */}
-        <div className="flex items-center gap-3 mb-4">
-          <img src="/usa.png" alt="" width={'50px'}/>
-          <h2 className="text-xl ">USA</h2>
-        </div>
-
-        {/* Description */}
-        <p className="text-gray-300 text-sm leading-relaxed font-sans">
-          13th Street. 47 W 13th St, New York, NY 10011, USA
-        </p>
-      </div>
-      <div className="max-w-md min-h-22 text-white p-6 rounded-xl shadow-lg white-border">
-        {/* Icon + Heading */}
-        <div className="flex items-center gap-3 mb-4">
-          <img src="/usa.png" alt="" width={'50px'}/>
-          <h2 className="text-xl ">USA</h2>
-        </div>
-
-        {/* Description */}
-        <p className="text-gray-300 text-sm leading-relaxed font-sans">
-          13th Street. 47 W 13th St, New York, NY 10011, USA
-        </p>
-      </div>
-      <div className="max-w-md min-h-22 text-white p-6 rounded-xl shadow-lg white-border">
-        {/* Icon + Heading */}
-        <div className="flex items-center gap-3 mb-4">
-          <img src="/usa.png" alt="" width={'50px'}/>
-          <h2 className="text-xl ">USA</h2>
-        </div>
-
-        {/* Description */}
-        <p className="text-gray-300 text-sm leading-relaxed font-sans">
-          13th Street. 47 W 13th St, New York, NY 10011, USA
-        </p>
-      </div>
-      <div className="max-w-md min-h-22 text-white p-6 rounded-xl shadow-lg white-border">
-        {/* Icon + Heading */}
-        <div className="flex items-center gap-3 mb-4">
-          <img src="/usa.png" alt="" width={'50px'}/>
-          <h2 className="text-xl ">USA</h2>
-        </div>
-
-        {/* Description */}
-        <p className="text-gray-300 text-sm leading-relaxed font-sans">
-          13th Street. 47 W 13th St, New York, NY 10011, USA
-        </p>
-      </div>
-      <div className="max-w-md min-h-22 text-white p-6 rounded-xl shadow-lg white-border">
-        {/* Icon + Heading */}
-        <div className="flex items-center gap-3 mb-4">
-          <img src="/usa.png" alt="" width={'50px'}/>
-          <h2 className="text-xl ">USA</h2>
-        </div>
-
-        {/* Description */}
-        <p className="text-gray-300 text-sm leading-relaxed font-sans">
-          13th Street. 47 W 13th St, New York, NY 10011, USA
-        </p>
-      </div>
-      <div className="max-w-md min-h-22 text-white p-6 rounded-xl shadow-lg white-border">
-        {/* Icon + Heading */}
-        <div className="flex items-center gap-3 mb-4">
-          <img src="/usa.png" alt="" width={'50px'}/>
-          <h2 className="text-xl ">USA</h2>
-        </div>
-
-        {/* Description */}
-        <p className="text-gray-300 text-sm leading-relaxed font-sans">
-          13th Street. 47 W 13th St, New York, NY 10011, USA
-        </p>
-      </div>
+                     <div className="flex justify-center items-center flex-wrap mt-5 p-4 gap-5">
+  <div className="max-w-md min-h-22 text-white p-6 rounded-xl shadow-lg white-border">
+    {/* Icon + Heading */}
+    <div className="flex items-center gap-3 mb-4">
+      <img src="/usa.png" alt="" width={'50px'} />
+      <h2 className="text-xl ">USA</h2>
     </div>
+    {/* Description */}
+    <p className="text-gray-300 text-sm leading-relaxed font-sans">
+      742 Evergreen Terrace, Springfield, USA
+    </p>
+  </div>
+
+  <div className="max-w-md min-h-22 text-white p-6 rounded-xl shadow-lg white-border">
+    {/* Icon + Heading */}
+    <div className="flex items-center gap-3 mb-4">
+      <img src="/indonasian.png" alt="" width={'50px'} />
+      <h2 className="text-xl ">Indonasia</h2>
+    </div>
+    {/* Description */}
+    <p className="text-gray-300 text-sm leading-relaxed font-sans">
+      Jl. Merdeka No.10, Jakarta, Indonesia
+    </p>
+  </div>
+
+  <div className="max-w-md min-h-22 text-white p-6 rounded-xl shadow-lg white-border">
+    {/* Icon + Heading */}
+    <div className="flex items-center gap-3 mb-4">
+      <img src="/italy.png" alt="" width={'50px'} />
+      <h2 className="text-xl ">Italy</h2>
+    </div>
+    {/* Description */}
+    <p className="text-gray-300 text-sm leading-relaxed font-sans">
+      Via Roma 15, 00100 Rome, Italy
+    </p>
+  </div>
+
+  <div className="max-w-md min-h-22 text-white p-6 rounded-xl shadow-lg white-border">
+    {/* Icon + Heading */}
+    <div className="flex items-center gap-3 mb-4">
+      <img src="/germany.jpg" alt="" width={'50px'} />
+      <h2 className="text-xl ">Germany</h2>
+    </div>
+    {/* Description */}
+    <p className="text-gray-300 text-sm leading-relaxed font-sans">
+      Hauptstraße 22, 10115 Berlin, Germany
+    </p>
+  </div>
+
+  <div className="max-w-md min-h-22 text-white p-6 rounded-xl shadow-lg white-border">
+    {/* Icon + Heading */}
+    <div className="flex items-center gap-3 mb-4">
+      <img src="/norway.jpg" alt="" width={'50px'} />
+      <h2 className="text-xl ">Norway</h2>
+    </div>
+    {/* Description */}
+    <p className="text-gray-300 text-sm leading-relaxed font-sans">
+      Karl Johans gate 5, 0154 Oslo, Norway
+    </p>
+  </div>
+
+  <div className="max-w-md min-h-22 text-white p-6 rounded-xl shadow-lg white-border">
+    {/* Icon + Heading */}
+    <div className="flex items-center gap-3 mb-4">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/1280px-Flag_of_Cambodia.svg.png" alt="" width={'50px'} />
+      <h2 className="text-xl ">Cambodia</h2>
+    </div>
+    {/* Description */}
+    <p className="text-gray-300 text-sm leading-relaxed font-sans">
+      Street 278, Phnom Penh, Cambodia
+    </p>
+  </div>
+</div>
+
                 </div>
             </section>
             <section ref={consultRef} className='w-full flex-col flex justify-center items-center gap-3 mt-30'>
@@ -327,14 +327,14 @@ useEffect(() => {
   <img
     src="/construction1.png"
     alt=""
-    className="hidden sm:block w-28 md:w-40 lg:w-70 absolute left-[5%] md:left-[7%]  shadow-lg shadow-black/40"
+    className="hidden sm:block w-28 md:w-40 lg:w-70 z-20 absolute left-[5%] md:left-[7%]  shadow-lg shadow-black/40"
   />
 
   {/* Center Image */}
   <img
     src="/construction2.png"
     alt=""
-    className="w-full sm:w-72 md:w-96 lg:w-120 lg:shadow-lg lg:shadow-black/40 px-10"
+    className="w-full sm:w-72 md:w-96 lg:w-120  px-10"
   />
 
   {/* Right Image */}
