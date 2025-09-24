@@ -9,19 +9,19 @@ export default function LoginPage() {
   const router = useRouter();
 
   async function handleLogin(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    // hardcoded credentials (abhi ke liye)
-    const validEmail = "ah0540232@gmail.com";
-    const validPassword = "123";
-
-    if (email === validEmail && password === validPassword) {
-      localStorage.setItem("auth", "true"); // save login status
-      router.push("/dashboard"); // redirect to dashboard
-    } else {
-      setError("Invalid email or password");
-    }
+  if (
+    email === process.env.NEXT_PUBLIC_ADMIN_EMAIL &&
+    password === process.env.NEXT_PUBLIC_ADMIN_PASS
+  ) {
+    localStorage.setItem("auth", "true"); // save login status
+    router.push("/dashboard"); // redirect to dashboard
+  } else {
+    setError("Invalid email or password");
   }
+}
+
 
   return (
     <div className="min-h-screen flex justify-center items-center  text-white">
