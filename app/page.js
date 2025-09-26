@@ -11,16 +11,11 @@ import Minifoam from "./components/minifoam";
 import { HashLoader } from "react-spinners";
 
 export default function Home() {
-  const { projectloading, loading } = useProjectsContext();
+  
 
   return (
     <>
-      {projectloading ? (
-        // Loader
-        <div className="flex items-center justify-center h-screen w-screen bg-black text-white text-xl">
-          <HashLoader color="white"/>
-        </div>
-      ) : (
+      
         <div className="main-container">
           <Minifoam/>
           <Navbar />
@@ -31,7 +26,7 @@ export default function Home() {
           <MyMap />
           <Footer />
         </div>
-      )}
+      
     </>
   );
 }
