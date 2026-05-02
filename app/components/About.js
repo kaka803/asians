@@ -9,149 +9,148 @@ gsap.registerPlugin(ScrollTrigger)
 const About = () => {
   const titleref = useRef(null)
 
-  let mm = gsap.matchMedia();
+  useEffect(() => {
+    let mm = gsap.matchMedia();
+    let ctx = gsap.context(() => {
+      // ---- Desktop Animations ----
+      mm.add("(min-width: 999px)", () => {
+        // Floating image scroll animation
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: ".showcase",
+            start: "top 100%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          },
+        }).to(".moving-img", { top: 830, x: 950, scale: 1.2, duration: 0.8 }, "same");
 
-useEffect(() => {
-  let ctx = gsap.context(() => {
-    // ---- Desktop Animations ----
-    mm.add("(min-width: 999px)", () => {
-      // Floating image scroll animation
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: ".showcase",
-          start: "top 100%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-      }).to(".moving-img", { top: 830, x: 950, scale: 1.2, duration: 0.8 }, "same");
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: ".contact",
+            start: "top 100%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          },
+        }).to(".moving-img2", { top: 1750, x: 0, scale: 1, duration: 0.8 });
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: ".contact",
-          start: "top 100%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-      }).to(".moving-img2", { top: 1750, x: 0, scale: 1, duration: 0.8 });
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: ".map-section",
+            start: "top 100%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          },
+        }).to(".moving-img2", { top: 2500, x: 950, scale: 1, duration: 0.8 });
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: ".map-section",
-          start: "top 100%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-      }).to(".moving-img2", { top: 2500, x: 950, scale: 1, duration: 0.8 });
+        // Title, Desc & Cards animation
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about-page",
+            start: "top 60%",
+            toggleActions: "play none none reverse",
+          },
+        });
 
-      // Title, Desc & Cards animation
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".about-page",
-          start: "top 60%",
-          toggleActions: "play none none reverse",
-        },
+        tl.from(titleref.current, {
+          y: -40,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power3.out",
+        })
+          .from(
+            ".paragraph",
+            {
+              y: -20,
+              opacity: 0,
+              duration: 0.6,
+              ease: "power2.out",
+            },
+            "-=0.3"
+          )
+          .from(
+            ".desc",
+            {
+              y: 20,
+              opacity: 0,
+              duration: 0.8,
+              ease: "power2.out",
+            },
+            "-=0.2"
+          )
+          .from(
+            ".box",
+            {
+              y: 40,
+              opacity: 0,
+              duration: 0.6,
+              ease: "power2.out",
+              stagger: 0.2,
+            },
+            "-=0.3"
+          );
       });
 
-      tl.from(titleref.current, {
-        y: -40,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-      })
-        .from(
-          ".paragraph",
-          {
-            y: -20,
-            opacity: 0,
-            duration: 0.6,
-            ease: "power2.out",
+      // ---- Mobile Animations ----
+      mm.add("(max-width: 604px)", () => {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: ".showcase",
+            start: "top 100%",
+            end: "bottom 40%",
+            toggleActions: "play none none reverse",
           },
-          "-=0.3"
-        )
-        .from(
-          ".desc",
-          {
-            y: 20,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power2.out",
-          },
-          "-=0.2"
-        )
-        .from(
-          ".box",
-          {
-            y: 40,
-            opacity: 0,
-            duration: 0.6,
-            ease: "power2.out",
-            stagger: 0.2,
-          },
-          "-=0.3"
-        );
-    });
+        }).to(".moving-img", { top: 1050, x: 190, scale: 1, duration: 1 });
 
-    // ---- Mobile Animations ----
-    mm.add("(max-width: 604px)", () => {
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: ".showcase",
-          start: "top 100%",
-          end: "bottom 40%",
-          toggleActions: "play none none reverse",
-        },
-      }).to(".moving-img", { top: 1050, x: 190, scale: 1, duration: 1 });
+        // Title, Desc & Cards mobile
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about-page",
+            start: "top 70%",
+            toggleActions: "play none none reverse",
+          },
+        });
 
-      // Title, Desc & Cards mobile
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".about-page",
-          start: "top 70%",
-          toggleActions: "play none none reverse",
-        },
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: ".contact",
+            start: "top 100%",
+            end: "bottom 50%",
+            toggleActions: "play none none reverse",
+          },
+        }).to(".moving-img2", { top: 2050, x: 0, scale: 0.9, duration: 0.8 });
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: ".map-section",
+            start: "top 100%",
+            end: "bottom 50%",
+            toggleActions: "play none none reverse",
+          },
+        }).to(".moving-img2", { top: 3450, x: 210, scale: 1, duration: 0.8 });
+
+        tl.from(titleref.current, { y: -30, opacity: 0, duration: 0.8 })
+          .from(".paragraph", { y: -15, opacity: 0, duration: 0.6 }, "-=0.3")
+          .from(".desc", { y: 15, opacity: 0, duration: 0.8 }, "-=0.3")
+          .from(
+            ".box",
+            {
+              y: 30,
+              opacity: 0,
+              duration: 0.6,
+              stagger: 0.1,
+            },
+            "-=0.3"
+          );
       });
-
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: ".contact",
-          start: "top 100%",
-          end: "bottom 50%",
-          toggleActions: "play none none reverse",
-        },
-      }).to(".moving-img2", { top: 2050, x: 0, scale: 0.9, duration: 0.8 });
-
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: ".map-section",
-          start: "top 100%",
-          end: "bottom 50%",
-          toggleActions: "play none none reverse",
-        },
-      }).to(".moving-img2", { top: 3450, x: 210, scale: 1, duration: 0.8 });
-
-      tl.from(titleref.current, { y: -30, opacity: 0, duration: 0.8 })
-        .from(".paragraph", { y: -15, opacity: 0, duration: 0.6 }, "-=0.3")
-        .from(".desc", { y: 15, opacity: 0, duration: 0.8 }, "-=0.3")
-        .from(
-          ".box",
-          {
-            y: 30,
-            opacity: 0,
-            duration: 0.6,
-            stagger: 0.1,
-          },
-          "-=0.3"
-        );
     });
-  });
 
-  // 🔥 Cleanup (important for Next.js route changes)
-  return () => {
-    ctx.revert(); // sab animations reset
-    mm.revert(); // matchMedia cleanup
-    ScrollTrigger.getAll().forEach((t) => t.kill()); // scrollTriggers kill
-  };
-}, []);
+    // 🔥 Cleanup (important for Next.js route changes)
+    return () => {
+      ctx.revert(); // sab animations reset
+      mm.revert(); // matchMedia cleanup
+      ScrollTrigger.getAll().forEach((t) => t.kill()); // scrollTriggers kill
+    };
+  }, []);
 
 
   return (

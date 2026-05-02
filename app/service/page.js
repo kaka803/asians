@@ -13,6 +13,20 @@ import Link from 'next/link'
 import { useProjectsContext } from '../context/GlobalContext'
 import { HashLoader } from 'react-spinners'
 
+// Configuration for Robot Positions based on original settings
+const ROBOT_CONFIGS = {
+  microsoft: { top: "0px", x: "0%", scale: 1 },
+  frontend: { top: "240px", x: "-50%", scale: 1 },
+  business: { top: "240px", x: "-250%", scale: 1.3 },
+  mobile: { top: "-80px", x: "-200%", scale: 0.8 },
+  software: { top: "-30px", x: "0%", scale: 1 },
+  backend: { top: "240px", x: "-50%", scale: 1 },
+  uiux: { top: "240px", x: "-230%", scale: 1 },
+  video: { top: "230px", x: "20%", scale: 1 },
+  marketing: { top: "240px", x: "-50%", scale: 1 },
+  ai: { top: "-30px", x: "0%", scale: 1 },
+};
+
 const Page = () => {
   const {loading} = useProjectsContext()
   const [activeSection, setActiveSection] = useState('microsoft')
@@ -59,20 +73,6 @@ useLayoutEffect(() => {
       }
     })
   }
-
-  // Configuration for Robot Positions based on original settings
-  const ROBOT_CONFIGS = {
-    microsoft: { top: "0px", x: "0%", scale: 1 },
-    frontend: { top: "240px", x: "-50%", scale: 1 },
-    business: { top: "240px", x: "-250%", scale: 1.3 },
-    mobile: { top: "-80px", x: "-200%", scale: 0.8 },
-    software: { top: "-30px", x: "0%", scale: 1 },
-    backend: { top: "240px", x: "-50%", scale: 1 },
-    uiux: { top: "240px", x: "-230%", scale: 1 },
-    video: { top: "230px", x: "20%", scale: 1 },
-    marketing: { top: "240px", x: "-50%", scale: 1 },
-    ai: { top: "-30px", x: "0%", scale: 1 },
-  };
 
   useEffect(() => {
     if (!robotRef.current) return;

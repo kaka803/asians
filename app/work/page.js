@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { useProjectsContext } from "../context/GlobalContext";
@@ -17,15 +17,17 @@ export default function PortfolioSection() {
   const [activeCategory, setActiveCategory] = useState("");
 
   // 🔹 Categories generate karna (unique categories)
-  const categories = [
-    ...new Set(projects?.projects?.map((p) => p.category.charAt(0).toUpperCase() + p.category.slice(1)))
-  ];
+  const categories = useMemo(() => {
+    return [
+      ...new Set(projects?.projects?.map((p) => p.category.charAt(0).toUpperCase() + p.category.slice(1)))
+    ];
+  }, [projects?.projects]);
 
   useEffect(() => {
     if (categories.length > 0 && !activeCategory) {
       setActiveCategory(categories[0]); // default category
     }
-  }, [categories]);
+  }, [categories, activeCategory]);
 
   // 🔹 Active category ke projects filter karo
   const filteredProjects = projects?.projects?.filter(
