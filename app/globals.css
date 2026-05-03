@@ -1,19 +1,8 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
 @import "tw-animate-css";
+@import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
-
-body {
-  font-family: "Jersey 25", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  min-height: 100vh;
-  background-color: #000;
-  color: white;
-  position: relative;
-  overflow-x: hidden;
-}
 
 body {
   font-family: "Jersey 25", sans-serif;
@@ -262,4 +251,30 @@ body::before {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Dashboard project modal — app/dashboard/page.js */
+@keyframes dashboard-modal-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes dashboard-modal-panel-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.dashboard-modal-overlay {
+  animation: dashboard-modal-overlay-in 0.2s ease-out forwards;
+}
+.dashboard-modal-panel {
+  animation: dashboard-modal-panel-in 0.34s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }

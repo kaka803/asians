@@ -8,9 +8,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useProjectsContext } from "../context/GlobalContext";
 
-
-
-
 const DeveloperSwiper = () => {
   
 const {developers} = useProjectsContext()

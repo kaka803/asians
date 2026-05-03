@@ -1,35 +1,7 @@
 "use client";
-import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Briefcase, MapPin, ArrowRight } from "lucide-react";
 
 export default function MyMap() {
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      gsap.registerPlugin(ScrollTrigger);
-      let ctx = gsap.context(() => {
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".map-section",
-            start: "top 75%",
-            // Set toggleActions to only play once and not reverse on scroll up
-            toggleActions: "play none none none", 
-          },
-        });
-
-        tl.from(".map-content h2", { x: -30, opacity: 0, duration: 0.8, ease: "power2.out" })
-          .from(".map-content p", { x: -20, opacity: 0, duration: 0.8, ease: "power2.out" }, "-=0.6")
-          .from(".address-card", { scale: 0.95, opacity: 0, duration: 1, ease: "expo.out" }, "-=0.4")
-          .from(".map-image-container", { scale: 0.9, opacity: 0, duration: 1.2, ease: "expo.out" }, "-=0.8")
-          .from(".map-heading", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.5")
-          .from(".footer-link-item", { y: 20, opacity: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }, "-=0.3")
-          .from(".career-box", { y: 40, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.5");
-      });
-      return () => ctx.revert();
-    }
-  }, []);
-
   return (
     <div className="map-section mt-20">
       {/* Top Section (Address + Image Placeholder) */}
@@ -77,7 +49,7 @@ export default function MyMap() {
         </div>
 
         {/* Right Section (Image) */}
-        <div className="w-full lg:w-[60%] map-image-container min-h-[350px] lg:min-h-[400px] rounded-2xl overflow-hidden relative ">
+        <div className="w-full lg:w-[60%] map-image-container min-h-[50px] lg:min-h-[400px] rounded-2xl overflow-hidden relative ">
           <img 
             src="/map.png" 
             alt="Asians Technologies Location Map" 
@@ -90,50 +62,103 @@ export default function MyMap() {
 
       {/* Heading - Removed as it's now integrated below for better space usage */}
 
-      {/* Bottom Section */}
-      <div className="w-full text-white px-6 md:px-20 py-10 border-t border-white/5 mt-12">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10">
-          
-          {/* Know More Title & Links */}
-          <div className="flex-1">
-             <h4 className="text-xl font-bold uppercase tracking-tighter text-white mb-6">Know More <span className="text-blue-400">About Us</span></h4>
-             <div className="flex flex-wrap gap-x-12 gap-y-4">
-                <div className="flex gap-6 items-center">
-                  <span className="text-[10px] uppercase tracking-widest text-white/20">Explore</span>
-                  <a href="#" className="footer-link-item text-sm text-white/50 hover:text-white transition-colors">Company</a>
-                  <a href="#" className="footer-link-item text-sm text-white/50 hover:text-white transition-colors">Services</a>
-                  <a href="#" className="footer-link-item text-sm text-white/50 hover:text-white transition-colors">Portfolio</a>
+      {/* Bottom Section (Premium Footer) */}
+      <div className="w-full relative mt-20 overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-600/5 blur-[100px] rounded-full"></div>
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-cyan-600/5 blur-[100px] rounded-full"></div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+            
+            {/* Brand & Vision Section */}
+            <div className="lg:col-span-5 flex flex-col gap-8">
+              <div className="flex flex-col gap-4">
+                <h4 className="text-3xl lg:text-5xl font-semibold tracking-tighter text-white leading-tight">
+                  KNOW MORE <br/>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500">
+                    ABOUT US
+                  </span>
+                </h4>
+                <p className="text-white/40 text-sm font-sans max-w-sm leading-relaxed">
+                  Empowering businesses through cutting-edge technology and innovative digital solutions. Join us on our journey to redefine the future.
+                </p>
+              </div>
+
+              {/* Enhanced Career Box */}
+              <div className="career-box group relative p-8 rounded-[2.5rem] bg-white/[0.02] border border-white/10 hover:border-blue-500/40 transition-all duration-700 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                
+                <div className="relative z-10 flex flex-col gap-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform duration-500">
+                      <Briefcase size={22} />
+                    </div>
+                    <div>
+                      <h3 className="text-[10px] font-semibold uppercase tracking-[0.3em] text-blue-400/60 mb-1">Join Our Team</h3>
+                      <p className="text-xl font-medium text-white tracking-tight">+92 305 9990279</p>
+                    </div>
+                  </div>
+                  
+                  <a href="mailto:careers@asianstechnologies.com" className="flex items-center justify-between group/apply px-6 py-4 bg-white/5 hover:bg-white rounded-2xl transition-all duration-500">
+                    <span className="text-xs font-semibold uppercase tracking-widest text-white group-hover/apply:text-black">Drop Your CV</span>
+                    <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-white group-hover/apply:bg-black group-hover/apply:text-white transition-all">
+                      <ArrowRight size={16} className="group-hover/apply:translate-x-1 transition-transform" />
+                    </div>
+                  </a>
                 </div>
-                <div className="flex gap-6 items-center">
-                  <span className="text-[10px] uppercase tracking-widest text-white/20">Connect</span>
-                  <a href="#" className="footer-link-item text-sm text-white/50 hover:text-white transition-colors">Blog</a>
-                  <a href="#" className="footer-link-item text-sm text-white/50 hover:text-white transition-colors">Technologies</a>
-                </div>
-             </div>
+              </div>
+            </div>
+
+            {/* Links Grid */}
+            <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12">
+              <div className="flex flex-col gap-6">
+                <h5 className="text-[10px] font-semibold uppercase tracking-[0.4em] text-blue-400/60">Explore</h5>
+                <ul className="flex flex-col gap-4">
+                  <li><a href="#" className="footer-link-item text-sm font-sans text-white/80 hover:text-white hover:translate-x-1 transition-all inline-block">Company</a></li>
+                  <li><a href="#" className="footer-link-item text-sm font-sans text-white/80 hover:text-white hover:translate-x-1 transition-all inline-block">Services</a></li>
+                  <li><a href="#" className="footer-link-item text-sm font-sans text-white/80 hover:text-white hover:translate-x-1 transition-all inline-block">Portfolio</a></li>
+                </ul>
+              </div>
+
+              <div className="flex flex-col gap-6">
+                <h5 className="text-[10px] font-semibold uppercase tracking-[0.4em] text-blue-400/60">Connect</h5>
+                <ul className="flex flex-col gap-4">
+                  <li><a href="#" className="footer-link-item text-sm font-sans text-white/80 hover:text-white hover:translate-x-1 transition-all inline-block">Blog</a></li>
+                  <li><a href="#" className="footer-link-item text-sm font-sans text-white/80 hover:text-white hover:translate-x-1 transition-all inline-block">Technologies</a></li>
+                  <li><a href="#" className="footer-link-item text-sm font-sans text-white/80 hover:text-white hover:translate-x-1 transition-all inline-block">Support</a></li>
+                </ul>
+              </div>
+
+              <div className="flex flex-col gap-6 col-span-2 md:col-span-1">
+                <h5 className="text-[10px] font-semibold uppercase tracking-[0.4em] text-blue-400/60">Legal</h5>
+                <ul className="flex flex-col gap-4">
+                  <li><a href="#" className="footer-link-item text-sm font-sans text-white/80 hover:text-white hover:translate-x-1 transition-all inline-block">Privacy Policy</a></li>
+                  <li><a href="#" className="footer-link-item text-sm font-sans text-white/80 hover:text-white hover:translate-x-1 transition-all inline-block">Terms of Service</a></li>
+                  <li><a href="#" className="footer-link-item text-sm font-sans text-white/80 hover:text-white hover:translate-x-1 transition-all inline-block">Cookie Policy</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
 
-          {/* Compact Career Box */}
-          <div className="career-box flex items-center gap-6 p-4 rounded-2xl border border-white/10 hover:border-blue-500/30 transition-all duration-500 bg-white/[0.02]">
-              <div className="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400">
-                <Briefcase size={18} />
-              </div>
-              <div>
-                <h3 className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/40 mb-1">Join Our Team</h3>
-                <p className="text-lg font-medium text-white tracking-tight">+92 305 9990279</p>
-              </div>
-              <a href="mailto:careers@asianstechnologies.com" className="group/apply flex items-center gap-2 px-5 py-2 bg-white/5 hover:bg-white hover:text-black rounded-full text-[10px] font-medium uppercase tracking-widest transition-all">
-                Apply <ArrowRight size={12} className="group-hover/apply:translate-x-1 transition-transform" />
-              </a>
+          {/* Bottom Bar */}
+          <div className="mt-24 pt-12 border-t border-white/5 flex flex-col md:row justify-between items-center gap-8">
+            <div className="flex items-center gap-8">
+               <div className="flex items-center gap-3">
+                 <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+                 <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/40 font-sans">Ready to build</span>
+               </div>
+               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/20 font-sans">
+                 © {new Date().getFullYear()} Asians Technologies
+               </p>
+            </div>
+            
+            {/* Social or Extra Links if needed */}
+            <div className="flex gap-10">
+               <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/10 italic font-sans">Premium Digital Experience</span>
+            </div>
           </div>
-        </div>
-
-        {/* Minimal Copyright Bar */}
-        <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/5 flex justify-between items-center text-[10px] uppercase tracking-[0.2em] text-white/20">
-           <p>© {new Date().getFullYear()} Asians Technologies</p>
-           <div className="flex gap-6">
-             <a href="#" className="hover:text-white transition-colors">Privacy</a>
-             <a href="#" className="hover:text-white transition-colors">Terms</a>
-           </div>
         </div>
       </div>
     </div>

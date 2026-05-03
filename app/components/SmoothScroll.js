@@ -1,9 +1,17 @@
 "use client";
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "@studio-freight/lenis";
 
 export default function SmoothScroll() {
+  const pathname = usePathname();
+
   useEffect(() => {
+    // Disable Lenis on the dashboard page
+    if (pathname && pathname.startsWith("/dashboard")) {
+      return;
+    }
+
     const lenis = new Lenis({
       duration: 1.2, // speed control
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easing function
@@ -20,7 +28,7 @@ export default function SmoothScroll() {
     return () => {
       lenis.destroy();
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }
